@@ -89,11 +89,18 @@ header {
   width: 107px;
 }
 
-.home-about > p {
+.home-about > a {
   font-size: 15px;
   line-height: 25px;
   font-weight: 600;
+  text-decoration: none;
+  color: var(--white);
   opacity: 100%;
+}
+
+.home-about > a:hover {
+  cursor: pointer;
+  color: var(--light-coral);
 }
 
 @media (min-width: 768px) {
@@ -125,7 +132,7 @@ header {
     margin-block: 0;
     width: 140px;
   }
-  .home-about > p {
+  .home-about > a {
     font-size: 18px;
     line-height: 28px;
   }
@@ -450,6 +457,29 @@ header {
   }
 }
 
+@media (min-width: 1200px) {
+  .results-container {
+    padding-bottom: 140px;
+    padding-inline: 165px;
+  }
+  .results-container > h2 {
+    font-size: 48px;
+    line-height: 48px;
+    width: 932px;
+  }
+
+  .testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 56px;
+  }
+
+  .testimonial > .avatar {
+    margin-top: 32px;
+  }
+}
+
 .contact {
   position: relative;
   overflow: hidden;
@@ -486,11 +516,25 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 0;
-    padding-block: 76;
+    padding-block: 76px;
     padding-inline: 97px;
   }
   .contact-container > h2 {
     width: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact-container {
+    padding-inline: 260px;
+  }
+  .contact-container > h2 {
+    font-size: 48px;
+    line-height: 48px;
+    text-align: left;
+  }
+  .home-pattern-6 {
+    transform: translateY(0);
   }
 }
 /* typography section */
@@ -673,6 +717,10 @@ footer p {
   footer p {
     text-align: right;
   }
+  footer .logo-image {
+    height: 32px;
+  }
+
   .footer-top {
     display: flex;
     justify-content: space-between;
@@ -701,5 +749,43 @@ footer p {
   }
   .social-media-icons {
     margin-block: 0;
+  }
+}
+@media (min-width: 1200px) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 48px;
+    padding-inline: 165px;
+  }
+  footer p {
+    text-align: left;
+  }
+  footer .logo-image {
+    height: 40px;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 125px;
+    width: 450px;
+  }
+  .footer-left {
+    height: 100px;
+  }
+  .footer-right {
+    align-items: flex-start;
+    width: 164px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 254px;
+    height: 100px;
+    margin-top: 0;
   }
 }
