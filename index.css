@@ -58,7 +58,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 header {
@@ -68,16 +68,11 @@ header {
   align-items: center;
   background-color: var(--midnight-green);
   padding-inline: 24px;
-  padding-top: 24px;
+  padding-top: 48px;
 }
 
 .logo-image {
   height: 32px;
-  width: auto;
-}
-
-.logo-image-small {
-  height: 24px;
   width: auto;
 }
 
@@ -675,6 +670,247 @@ button {
   border: none;
 }
 
+/* ----------------- */
+/* About page styles */
+/* ----------------- */
+
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  background-color: var(--midnight-green);
+  padding-inline: 24px;
+  padding-bottom: 108px;
+}
+
+.about h1 {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+  width: 240px;
+  margin-inline: auto;
+  margin-top: 80px;
+}
+
+.about p {
+  font-size: 15px;
+  line-height: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-inline: auto;
+  margin-top: 18px;
+}
+
+.about-pattern-1 {
+  position: absolute;
+  right: -100px;
+  bottom: -100px;
+}
+
+@media (min-width: 768px) {
+  .about h1 {
+    font-size: 64px;
+    line-height: 56px;
+    width: 360px;
+    margin-top: 112px;
+  }
+  .about p {
+    width: 460px;
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about {
+    padding-inline: 165px;
+  }
+
+  .about h1 {
+    font-size: 100px;
+    line-height: 100px;
+    text-align: left;
+    width: 600px;
+    margin-inline: 0;
+    margin-top: 0;
+  }
+
+  .about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 65px;
+    margin-top: 129px;
+  }
+
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 195px;
+  }
+
+  .about-rectangle {
+    width: 50px;
+    height: 4px;
+    background-color: var(--rapture-blue);
+  }
+
+  .about p {
+    font-size: 18px;
+    line-height: 28px;
+    text-align: left;
+    margin-inline: 0;
+    margin-top: 0;
+    width: 460px;
+  }
+}
+
+/* --------------- */
+/* Director styles */
+/* --------------- */
+
+.directors {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--deep-jungle-green);
+}
+
+.about-pattern-2 {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}
+
+.about-pattern-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.directors > h2 {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 88px;
+}
+
+.director-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  row-gap: 50px;
+  margin-top: 48px;
+  padding-bottom: 116px;
+}
+
+.director-info,
+.director-quote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dark-green);
+  margin-inline: 24px;
+  height: 253px;
+}
+
+.dir-avatar {
+  height: 96px;
+  width: auto;
+  border-radius: 48px;
+  border: 2px solid var(--rapture-blue);
+  margin-top: 32px;
+}
+
+.director-info > .dir-name,
+.director-quote > .dir-name {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  color: var(--rapture-blue);
+}
+
+.director-info > .dir-name {
+  margin-top: 16px;
+}
+
+.director-quote > .dir-name {
+  margin-top: 35px;
+}
+
+.dir-post {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.dir-plus,
+.dir-close {
+  position: absolute;
+  bottom: -28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+}
+
+.dir-plus {
+  background-color: var(--light-coral);
+}
+.dir-close {
+  background-color: var(--rapture-blue);
+}
+
+.dir-plus > img,
+.dir-close > img {
+  /* I don't know why this works. */
+  position: relative;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.dir-plus:hover,
+.dir-close:hover,
+.dir-plus > img:hover,
+.dir-close > img:hover {
+  cursor: pointer;
+}
+
+.dir-quote {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 600;
+  text-align: center;
+  padding-inline: 30px;
+  margin-top: 8px;
+}
+
+.dir-social {
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  width: 60px;
+  margin-top: 24px;
+}
+
+.dir-social > svg:hover path {
+  cursor: pointer;
+  fill: var(--light-coral);
+}
+
+/* ============= */
+/* footer styles */
+/* ============= */
+
 footer {
   display: flex;
   flex-direction: column;
@@ -688,9 +924,28 @@ footer p {
   font-size: 15px;
   line-height: 25px;
   font-weight: 600;
+  text-align: center;
   color: var(--white);
   opacity: 50%;
   text-align: center;
+}
+
+footer .logo-image {
+  height: 24px;
+  width: auto;
+  margin-inline: auto;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .social-media-icons {
@@ -727,8 +982,6 @@ footer p {
     align-items: center;
   }
   .footer-left {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     height: 102px;
@@ -739,9 +992,8 @@ footer p {
     align-items: flex-end;
   }
   .footer-bottom {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     margin-top: 33px;
   }
   .home-about {
