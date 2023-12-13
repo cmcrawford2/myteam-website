@@ -907,6 +907,50 @@ button {
   fill: var(--light-coral);
 }
 
+/* -------------- */
+/* clients styles */
+/* -------------- */
+
+.clients {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dark-green);
+}
+
+.about-pattern-4 {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}
+
+.clients > h2 {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-inline: auto;
+  margin-top: 88px;
+}
+
+.client-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 360px;
+  margin-top: 54px;
+  margin-bottom: 88px;
+}
+
+.client-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.client-logo > img {
+  width: 45%;
+}
+
 /* ============= */
 /* footer styles */
 /* ============= */
