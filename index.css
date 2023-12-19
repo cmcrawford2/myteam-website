@@ -3,7 +3,6 @@
 /* ------------------- */
 
 :root {
-  /* primary colors */
   --midnight-green: #014856;
   --light-coral: #f67e7e;
   --white: #ffffff;
@@ -23,9 +22,18 @@
   box-sizing: border-box;
 }
 
+/* make images easier to work with */
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
 /* Utility classes */
 
 /* background colors */
+
 .bg-midnight-green {
   background-color: var(--midnight-green);
 }
@@ -66,7 +74,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--midnight-green);
   padding-inline: 24px;
   padding-top: 48px;
 }
@@ -75,6 +82,9 @@ header {
   height: 32px;
   width: auto;
 }
+
+/* The two links to other pages. */
+/* They go in Header and Footer */
 
 .home-about {
   display: flex;
@@ -105,7 +115,6 @@ header {
     padding-inline: 39px;
     padding-top: 64px;
   }
-
   .main-nav {
     display: flex;
     justify-content: space-between;
@@ -133,9 +142,10 @@ header {
   }
 }
 
+/* Home page - intro section */
+
 .intro {
-  background-color: var(--midnight-green);
-  padding-inline: 39px;
+  padding-inline: 24px;
 }
 
 .intro h1 {
@@ -175,6 +185,9 @@ header {
 }
 
 @media (min-width: 768px) {
+  .intro {
+    padding-inline: 39px;
+  }
   .intro h1 {
     font-size: 64px;
     line-height: 56px;
@@ -195,7 +208,6 @@ header {
     position: relative;
     padding-inline: 165px;
   }
-
   .intro h1 {
     font-size: 100px;
     line-height: 100px;
@@ -204,7 +216,6 @@ header {
     margin-inline: 0;
     margin-top: 0;
   }
-
   .intro-container {
     display: flex;
     justify-content: space-between;
@@ -212,7 +223,6 @@ header {
     gap: 65px;
     margin-top: 129px;
   }
-
   .intro-text {
     display: flex;
     flex-direction: column;
@@ -220,20 +230,11 @@ header {
     align-items: flex-start;
     height: 195px;
   }
-
   .intro-rectangle {
     width: 50px;
     height: 4px;
     background-color: var(--rapture-blue);
   }
-
-  .home-pattern-1 {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: -100px;
-  }
-
   .intro p {
     font-size: 18px;
     line-height: 28px;
@@ -242,20 +243,26 @@ header {
     margin-top: 0;
     width: 460px;
   }
-
+  .home-pattern-1 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -100px;
+  }
   .home-pattern-2 {
     margin-top: 156px;
   }
-
   .home-pattern-2-container {
     display: flex;
     justify-content: right;
   }
 }
 
+/* Home page - features section */
+
 .features {
   position: relative;
-  background-color: var(--dark-green);
+  background-color: var(--sacramento-state-green);
   padding-inline: 24px;
   padding-top: 64px;
 }
@@ -323,7 +330,6 @@ header {
   }
   .features h2 {
     width: 445px;
-    margin-top: 54px;
   }
   .icon-text-container {
     row-gap: 32px;
@@ -354,11 +360,11 @@ header {
     display: flex;
     justify-content: space-between;
   }
-
   .features h2 {
     font-size: 48px;
     line-height: 48px;
     width: 445px;
+    margin-top: 54px;
   }
   .icon-text-container {
     row-gap: 32px;
@@ -372,34 +378,42 @@ header {
   }
 }
 
+/* Home page - results section */
+
 .results {
   position: relative;
 }
+
 .results-container {
   padding-top: 140px;
   padding-bottom: 164px;
   padding-inline: 24px;
 }
+
 .results-container > h2 {
   font-size: 32px;
   line-height: 32px;
   font-weight: 700;
   text-align: center;
 }
+
 .results-container > h2 > span {
   color: var(--rapture-blue);
 }
+
 .testimonial-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 48px;
   margin-top: 48px;
 }
+
 .testimonial {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .testimonial > .text {
   font-size: 15px;
   line-height: 25px;
@@ -407,6 +421,7 @@ header {
   text-align: center;
   margin-top: -20px;
 }
+
 .testimonial > .name {
   font-size: 18px;
   line-height: 28px;
@@ -414,12 +429,14 @@ header {
   color: var(--rapture-blue);
   margin-top: 16px;
 }
+
 .testimonial > .post {
   font-size: 13px;
   line-height: 18px;
   margin-top: 2px;
   font-style: italic;
 }
+
 .testimonial > .avatar {
   width: 62px;
   height: auto;
@@ -442,8 +459,7 @@ header {
 
 @media (min-width: 768px) {
   .results-container {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-block: 100px;
     padding-inline: 97px;
   }
   .results-container > h2 {
@@ -454,7 +470,7 @@ header {
 
 @media (min-width: 1200px) {
   .results-container {
-    padding-bottom: 140px;
+    padding-block: 140px;
     padding-inline: 165px;
   }
   .results-container > h2 {
@@ -462,18 +478,18 @@ header {
     line-height: 48px;
     width: 932px;
   }
-
   .testimonial-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 56px;
   }
-
   .testimonial > .avatar {
     margin-top: 32px;
   }
 }
+
+/* Contact section */
 
 .contact {
   position: relative;
@@ -532,7 +548,9 @@ header {
     transform: translateY(0);
   }
 }
+
 /* typography section */
+/* to be deleted */
 
 .typography,
 .buttons {
@@ -612,6 +630,8 @@ header {
   line-height: 25px;
   font-weight: 600;
 }
+
+/* button section - maybe move */
 
 button {
   font: inherit;
@@ -739,7 +759,6 @@ button {
     padding-inline: 165px;
     padding-block: 120px;
   }
-
   .about h1 {
     font-size: 64px;
     line-height: 100px;
@@ -748,20 +767,17 @@ button {
     margin-inline: 0;
     margin-top: 0;
   }
-
   .about-desktop {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
-
   .about-rectangle {
     display: block;
     width: 50px;
     height: 4px;
     background-color: var(--light-coral);
   }
-
   .about p {
     font-size: 18px;
     line-height: 28px;
@@ -772,9 +788,9 @@ button {
   }
 }
 
-/* --------------- */
-/* Director styles */
-/* --------------- */
+/* ---------------------------- */
+/* About page - Director styles */
+/* ---------------------------- */
 
 .directors {
   position: relative;
@@ -868,6 +884,7 @@ button {
 .dir-plus {
   background-color: var(--light-coral);
 }
+
 .dir-close {
   background-color: var(--rapture-blue);
 }
@@ -926,9 +943,9 @@ button {
   }
 }
 
-/* -------------- */
-/* clients styles */
-/* -------------- */
+/* --------------------------- */
+/* About page - clients styles */
+/* --------------------------- */
 
 .clients {
   position: relative;
@@ -964,29 +981,32 @@ button {
 .client-logo {
   display: flex;
   justify-content: center;
-  width: fit-content;
+  width: auto;
 }
 
-.client-logo > img {
-  width: 47%;
-  height: auto;
+.client-container > img {
+  /* width: 47%;
+  height: auto; */
+  margin-inline: auto;
 }
 
 @media (min-width: 768px) {
   .about-pattern-4 {
     left: 0px;
   }
-
   .clients > h2 {
     margin-top: 100px;
   }
-
   .client-container {
     flex-direction: row;
     padding-inline: 39px;
+    gap: 39px;
     height: auto;
     margin-top: 48px;
     margin-bottom: 100px;
+  }
+  .client-container > img {
+    margin: 0;
   }
 }
 
@@ -1009,7 +1029,7 @@ footer p {
   font-weight: 600;
   text-align: center;
   color: var(--white);
-  opacity: 50%;
+  opacity: 60%;
   text-align: center;
 }
 
@@ -1056,9 +1076,8 @@ footer .logo-image {
     text-align: right;
   }
   footer .logo-image {
-    height: 32px;
+    height: 24px;
   }
-
   .footer-top {
     display: flex;
     justify-content: space-between;
@@ -1086,6 +1105,7 @@ footer .logo-image {
     margin-block: 0;
   }
 }
+
 @media (min-width: 1200px) {
   footer {
     display: flex;
