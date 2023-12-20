@@ -1,8 +1,6 @@
 window.addEventListener("load", () => {
   const directors = document.querySelectorAll(".director");
 
-  console.log(directors);
-
   directors.forEach((director) => {
     const directorInfo = director.querySelector(".director-info");
     const directorQuote = director.querySelector(".director-quote");

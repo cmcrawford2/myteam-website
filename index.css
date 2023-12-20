@@ -824,6 +824,7 @@ button {
   grid-template-columns: 1fr;
   row-gap: 50px;
   margin-top: 48px;
+  padding-inline: 24px;
   padding-bottom: 116px;
 }
 
@@ -833,16 +834,16 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--dark-green);
-  padding-inline: 24px;
+  background-color: var(--sacramento-state-green);
   height: 253px;
+  padding-inline: 24px;
 }
 
 .dir-avatar {
   height: 96px;
   width: auto;
   border-radius: 48px;
-  border: 2px solid var(--rapture-blue);
+  border: 2px solid #c4fffe;
   margin-top: 32px;
 }
 
@@ -927,19 +928,33 @@ button {
 }
 
 @media (min-width: 768px) {
-  .director-container {
-    grid-template-columns: repeat(auto-fill, 281px);
-    justify-content: space-between;
-    gap: 0px;
-    row-gap: 76px;
-    padding-inline: clamp(90px, 12vw, 97px);
-    padding-bottom: 128px;
-  }
   .about-pattern-2 {
     top: 0px;
   }
   .directors > h2 {
     margin-top: 100px;
+  }
+  .director-container {
+    grid-template-columns: repeat(auto-fill, 281px);
+    justify-content: space-between;
+    gap: 10px;
+    row-gap: 76px;
+    padding-inline: clamp(90px, 12vw, 97px);
+    padding-bottom: 128px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .directors > h2 {
+    font-size: 48px;
+    line-height: 48px;
+    margin-top: 140px;
+  }
+  .director-container {
+    grid-template-columns: repeat(auto-fill, 350px);
+    justify-content: space-between;
+    padding-inline: 165px;
+    padding-bottom: 168px;
   }
 }
 
@@ -950,7 +965,7 @@ button {
 .clients {
   position: relative;
   overflow: hidden;
-  background-color: var(--dark-green);
+  background-color: var(--sacramento-state-green);
 }
 
 .about-pattern-4 {
@@ -978,16 +993,22 @@ button {
   margin-bottom: 88px;
 }
 
+/* .client-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 24px;
+  height: 360px;
+  margin-top: 60px;
+  margin-bottom: 72px;
+} */
+
+/* These divs are required for the images to keep their size. */
+
 .client-logo {
   display: flex;
   justify-content: center;
-  width: auto;
-}
-
-.client-container > img {
-  /* width: 47%;
-  height: auto; */
-  margin-inline: auto;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -999,14 +1020,28 @@ button {
   }
   .client-container {
     flex-direction: row;
+    gap: clamp(40px, 5.55vw, 60px);
     padding-inline: 39px;
-    gap: 39px;
     height: auto;
     margin-top: 48px;
     margin-bottom: 100px;
   }
-  .client-container > img {
-    margin: 0;
+}
+
+@media (min-width: 1200px) {
+  .about-pattern-4 {
+    top: 0px;
+  }
+  .clients > h2 {
+    font-size: 48px;
+    line-height: 48px;
+    margin-top: 140px;
+  }
+  .client-container {
+    gap: clamp(40px, 5.55vw, 80px);
+    padding-inline: 165px;
+    margin-top: 64px;
+    margin-bottom: 140px;
   }
 }
 
