@@ -30,35 +30,6 @@ picture {
   display: block;
 }
 
-/* Utility classes */
-
-/* background colors */
-
-.bg-midnight-green {
-  background-color: var(--midnight-green);
-}
-.bg-light-coral {
-  background-color: var(--light-coral);
-}
-.bg-white {
-  background-color: var(--white);
-}
-.bg-rapture-blue {
-  background-color: var(--rapture-blue);
-}
-.bg-police-blue {
-  background-color: var(--police-blue);
-}
-.bg-deep-jungle-green {
-  background-color: var(--deep-jungle-green);
-}
-.bg-sacramento-state-green {
-  background-color: var(--sacramento-state-green);
-}
-.bg-dark-green {
-  background-color: var(--dark-green);
-}
-
 body {
   font-family: "Livvic", sans-serif;
   background-color: var(--midnight-green);
@@ -83,8 +54,8 @@ header {
   width: auto;
 }
 
-/* The two links to other pages. */
-/* They go in Header and Footer */
+/* "home" and "about" link to other pages. */
+/* They go in both the Header and Footer.  */
 
 .home-about {
   display: flex;
@@ -142,7 +113,11 @@ header {
   }
 }
 
-/* Home page - intro section */
+/* ---------------- */
+/* Home page styles */
+/* ---------------- */
+
+/* intro section */
 
 .intro {
   padding-inline: 24px;
@@ -549,89 +524,9 @@ header {
   }
 }
 
-/* typography section */
-/* to be deleted */
-
-.typography,
-.buttons {
-  margin-top: 56px;
-  padding-bottom: 56px;
-  border-bottom: 1px solid var(--light-gray);
-}
-.typography--font {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 48px;
-}
-.typography--font-box {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.typography--font-letters,
-.typography--font-name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.typography--font-letters {
-  width: 100px;
-  height: 100px;
-  background-color: var(--dark-green);
-}
-.typography--font-letters > p {
-  color: var(--white);
-  font-size: 40px;
-  line-height: 42px;
-  font-weight: 700;
-}
-.typography--font-name {
-  width: 166px;
-  height: 100px;
-  background-color: var(--light-gray);
-}
-
-.typography--container {
-  display: flex;
-  gap: 40px;
-  margin-top: 40px;
-}
-.typography--column {
-  width: 396px;
-}
-.headings-h1-large {
-  font-size: 100px;
-  line-height: 100px;
-  font-weight: 700;
-}
-.headings-h1-small {
-  font-size: 64px;
-  line-height: 56px;
-  font-weight: 700;
-}
-.headings-h2 {
-  font-size: 48px;
-  line-height: 48px;
-  font-weight: 700;
-}
-.headings-h3 {
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 700;
-}
-.body-1 {
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 600;
-}
-.body-2 {
-  font-size: 15px;
-  line-height: 25px;
-  font-weight: 600;
-}
-
-/* button section - maybe move */
+/* ============== */
+/* button section */
+/* ============== */
 
 button {
   font: inherit;
@@ -992,16 +887,6 @@ button {
   margin-bottom: 88px;
 }
 
-/* .client-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  gap: 24px;
-  height: 360px;
-  margin-top: 60px;
-  margin-bottom: 72px;
-} */
-
 /* These divs are required for the images to keep their size. */
 
 .client-logo {
@@ -1152,7 +1037,8 @@ button {
   }
 }
 
-/* Basic form styles */
+/* Contact form styles */
+
 .contact-form {
   position: relative;
   overflow: hidden;
@@ -1183,35 +1069,36 @@ textarea {
   padding-left: 14px;
   padding-bottom: 18px;
   border: none;
-  border-bottom: 1px solid var(--white); /* Bottom border */
+  border-bottom: 1px solid var(--white);
   transition: border-color 0.3s ease;
   color: var(--white);
-  background-color: transparent; /* Transparent background */
+  background-color: transparent;
 }
 
 textarea {
-  resize: vertical; /* Allow vertical resizing */
+  resize: vertical;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
   outline: none;
-  border-bottom: 1px solid var(--rapture-blue); /* Change bottom border color on focus */
+  border-bottom: 1px solid var(--rapture-blue);
 }
 
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 textarea::placeholder {
-  color: var(--rapture-blue); /* Placeholder text color */
+  color: var(--rapture-blue);
 }
 
-/* Hide placeholder on input focus */
 input[type="text"]:focus::placeholder,
 input[type="email"]:focus::placeholder,
 textarea:focus::placeholder {
   color: transparent;
 }
+
+/* Styles for invalid input fields */
 
 .validation-message {
   display: none;
@@ -1220,11 +1107,10 @@ textarea:focus::placeholder {
   font-style: italic;
 }
 
-/* Style for invalid input fields */
 input[type="text"].error-border,
 input[type="email"].error-border,
 textarea.error-border {
-  border-bottom: 1px solid var(--light-coral); /* Change border color for invalid input */
+  border-bottom: 1px solid var(--light-coral);
 }
 
 input:invalid + .validation-message {

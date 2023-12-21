@@ -10,39 +10,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("form-fields");
   const inputs = form.querySelectorAll("input[required], textarea[required]");
+  const submitButton = document.getElementById("submit-button");
 
-  form.addEventListener("submit", function (event) {
+  function checkFormValidity() {
+    let isFormValid = true;
+
     inputs.forEach(function (input) {
       const validationMsg = input.nextElementSibling;
       if (!input.checkValidity()) {
         validationMsg.style.display = "block";
         input.classList.add("error-border"); // Add a class for error border
-        event.preventDefault(); // Prevent form submission if not valid
+        isFormValid = false;
       } else {
         validationMsg.style.display = "none";
         input.classList.remove("error-border"); // Remove the error border class
       }
     });
+
+    submitButton.disabled = !isFormValid; // Disable/enable submit button based on form validity
+  }
+
+  form.addEventListener("submit", function (event) {
+    checkFormValidity(); // Validate form before submission
+    if (!submitButton.disabled) {
+      // Proceed with form submission if not disabled
+      console.log("Form submitted successfully!");
+    } else {
+      event.preventDefault(); // Prevent form submission if disabled
+    }
   });
 
   inputs.forEach(function (input) {
-    input.addEventListener("input", function () {
-      const validationMsg = this.nextElementSibling;
-      if (!this.checkValidity() && this.type !== "email") {
-        validationMsg.style.display = "block";
-        this.classList.add("error-border");
-      } else {
-        validationMsg.style.display = "none";
-        this.classList.remove("error-border");
-      }
-    });
+    input.addEventListener("input", checkFormValidity); // Check validity on input
   });
 
   form.addEventListener("reset", function () {
-    inputs.forEach(function (input) {
-      const validationMsg = input.nextElementSibling;
-      validationMsg.style.display = "none";
-      input.classList.remove("error-border"); // Remove error styles on form reset
-    });
+    hideValidationMessages();
+    submitButton.disabled = true; // Disable submit button on form reset
   });
 });
