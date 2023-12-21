@@ -638,9 +638,9 @@ button {
   font-size: 18px;
   line-height: 28px;
   font-weight: 600;
-  width: 153px;
   height: 48px;
   border-radius: 24px;
+  padding-inline: 32px;
   padding-bottom: 3px;
 }
 
@@ -700,7 +700,6 @@ button {
 }
 
 .about-container {
-  background-color: var(--midnight-green);
   padding-inline: 24px;
   padding-bottom: 108px;
 }
@@ -1045,6 +1044,213 @@ button {
   }
 }
 
+/* ------------------- */
+/* contact page styles */
+/* ------------------- */
+
+.contact-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-pattern-1 {
+  position: absolute;
+  display: none;
+}
+
+.contact-page h1 {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+  width: 240px;
+  margin-inline: auto;
+  margin-top: 80px;
+}
+
+.contact-page h2 {
+  font-size: 23px;
+  line-height: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 17px;
+  color: var(--light-coral);
+}
+
+.side-icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  padding-inline: 24px;
+  margin-top: 39px;
+}
+
+.side-icon {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 23px;
+}
+
+.side-icon p {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  text-align: left;
+}
+
+@media (min-width: 786px) {
+  .contact-pattern-1 {
+    display: block;
+    top: 104px;
+    left: -100px;
+  }
+  .contact-page h1 {
+    font-size: 64px;
+    line-height: 56px;
+    margin-top: 112px;
+  }
+  .contact-page h2 {
+    font-size: 32px;
+    margin-top: 24px;
+  }
+  .side-icon-container {
+    gap: 8px;
+    padding-inline: 127px;
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact-main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-pattern-1 {
+    top: 124px;
+  }
+  .contact-page h1 {
+    line-height: 100px;
+    width: auto;
+    margin-inline: 0;
+    padding-left: 165px;
+    margin-top: 120px;
+    text-align: left;
+  }
+  .contact-page h2 {
+    padding-left: 165px;
+    margin-top: 16px;
+    text-align: left;
+  }
+  .side-icon-container {
+    gap: 8px;
+    padding-left: 165px;
+    padding-right: 0;
+    margin-top: 32px;
+  }
+}
+
+/* Basic form styles */
+.contact-form {
+  position: relative;
+  overflow: hidden;
+  padding-inline: 24px;
+  margin-top: 56px;
+  padding-bottom: 88px;
+}
+
+.contact-pattern-2 {
+  position: absolute;
+  bottom: -112px;
+  right: -100px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 600;
+  letter-spacing: -0.12px;
+  width: 100%;
+  padding-left: 14px;
+  padding-bottom: 18px;
+  border: none;
+  border-bottom: 1px solid var(--white); /* Bottom border */
+  transition: border-color 0.3s ease;
+  color: var(--white);
+  background-color: transparent; /* Transparent background */
+}
+
+textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-bottom: 1px solid var(--rapture-blue); /* Change bottom border color on focus */
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: var(--rapture-blue); /* Placeholder text color */
+}
+
+/* Hide placeholder on input focus */
+input[type="text"]:focus::placeholder,
+input[type="email"]:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+.validation-message {
+  display: none;
+  color: var(--light-coral);
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Style for invalid input fields */
+input[type="text"].error-border,
+input[type="email"].error-border,
+textarea.error-border {
+  border-bottom: 1px solid var(--light-coral); /* Change border color for invalid input */
+}
+
+input:invalid + .validation-message {
+  display: block;
+}
+
+@media (min-width: 786px) {
+  .contact-form {
+    padding-inline: 113px;
+    margin-top: 63px;
+    padding-bottom: 112px;
+  }
+  .contact-pattern-2 {
+    bottom: 0px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact-form {
+    padding-left: 0;
+    padding-right: 165px;
+    margin-top: 120px;
+    padding-bottom: auto;
+  }
+}
+
 /* ============= */
 /* footer styles */
 /* ============= */
@@ -1105,13 +1311,14 @@ footer .logo-image {
   footer {
     display: block;
     padding-block: 56px;
-    padding-inline: 30px;
+    padding-inline: 39px;
   }
   footer p {
     text-align: right;
   }
   footer .logo-image {
     height: 24px;
+    margin-inline: 0;
   }
   .footer-top {
     display: flex;
