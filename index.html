@@ -14,7 +14,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./assets/favicon-32x32.png"
     />
 
     <link rel="stylesheet" href="index.css" />
@@ -34,6 +34,26 @@
         </a>
       </nav>
       <img class="hamburger-icon" src="assets/icon-hamburger.svg" alt="menu" />
+      <div class="hidden mobile-nav">
+        <div class="icon-div">
+          <img
+            class="close-menu-icon"
+            src="assets/icon-close.svg"
+            alt="close menu icon"
+          />
+        </div>
+        <a href="#">home</a>
+        <a href="about.html">about</a>
+        <a href="contact.html">
+          <button class="btn-pri-lt">contact us</button>
+        </a>
+      </div>
+      <div class="dimmed-overlay"></div>
+      <img
+        class="hidden mobile-nav-pattern-1"
+        src="assets/bg-pattern-about-1-mobile-nav-1.svg"
+        alt="mobile nav pattern 1"
+      />
     </header>
     <main>
       <section class="intro">
@@ -238,22 +258,6 @@
         <p>Copyright 2020. All Rights Reserved</p>
       </div>
     </footer>
-    <script>
-      window.addEventListener("load", () => {
-        const mainNav = document.querySelector(".main-nav");
-        const hamburger = document.querySelector(".hamburger-icon");
-        function toggleNavigation() {
-          if (window.innerWidth >= 768) {
-            hamburger.classList.add("hidden");
-            mainNav.classList.remove("hidden");
-          } else {
-            mainNav.classList.add("hidden");
-            hamburger.classList.remove("hidden");
-          }
-        }
-        toggleNavigation();
-        window.addEventListener("resize", () => toggleNavigation());
-      });
-    </script>
+    <script src="navigation.js"></script>
   </body>
 </html>
