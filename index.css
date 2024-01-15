@@ -421,6 +421,7 @@ header {
 
 .results {
   position: relative;
+  background-color: var(--deep-jungle-green);
 }
 
 .results-container {
@@ -466,7 +467,7 @@ header {
   line-height: 28px;
   font-weight: 700;
   color: var(--rapture-blue);
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 .testimonial > .post {
@@ -477,10 +478,10 @@ header {
 }
 
 .testimonial > .avatar {
-  width: 62px;
+  width: 64px;
   height: auto;
-  border-radius: 31px;
-  border: 2px solid var(--rapture-blue);
+  border-radius: 32px;
+  border: 2px solid #c4fffe;
   margin-top: 16px;
 }
 
@@ -509,7 +510,8 @@ header {
 
 @media (min-width: 1200px) {
   .results-container {
-    padding-block: 140px;
+    padding-top: 140px;
+    padding-bottom: 150px;
     padding-inline: 165px;
   }
   .results-container > h2 {
